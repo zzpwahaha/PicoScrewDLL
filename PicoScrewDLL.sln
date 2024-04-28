@@ -5,20 +5,22 @@ VisualStudioVersion = 17.9.34607.119
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "newport_usb_wrap", "newport_usb_wrap\newport_usb_wrap.vcxproj", "{C1D168C9-84DA-425E-844A-7A212582F60E}"
 EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "newport_usb_wrap_pybind11", "newport_usb_wrap_pybind11\newport_usb_wrap_pybind11.vcxproj", "{A63EBDD3-0A5D-474D-BF9C-5B1500F64FCA}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|x64 = Debug|x64
-		Debug|x86 = Debug|x86
 		Release|x64 = Release|x64
-		Release|x86 = Release|x86
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
 		{C1D168C9-84DA-425E-844A-7A212582F60E}.Debug|x64.ActiveCfg = Debug|x64
 		{C1D168C9-84DA-425E-844A-7A212582F60E}.Debug|x64.Build.0 = Debug|x64
-		{C1D168C9-84DA-425E-844A-7A212582F60E}.Debug|x86.ActiveCfg = Debug|x64
 		{C1D168C9-84DA-425E-844A-7A212582F60E}.Release|x64.ActiveCfg = Release|x64
 		{C1D168C9-84DA-425E-844A-7A212582F60E}.Release|x64.Build.0 = Release|x64
-		{C1D168C9-84DA-425E-844A-7A212582F60E}.Release|x86.ActiveCfg = Release|x64
+		{A63EBDD3-0A5D-474D-BF9C-5B1500F64FCA}.Debug|x64.ActiveCfg = Debug|x64
+		{A63EBDD3-0A5D-474D-BF9C-5B1500F64FCA}.Debug|x64.Build.0 = Debug|x64
+		{A63EBDD3-0A5D-474D-BF9C-5B1500F64FCA}.Release|x64.ActiveCfg = Release|x64
+		{A63EBDD3-0A5D-474D-BF9C-5B1500F64FCA}.Release|x64.Build.0 = Release|x64
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

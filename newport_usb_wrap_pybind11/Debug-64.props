@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ImportGroup Label="PropertySheets" />
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup>
+    <IncludePath>$(ProjectDir)3rd_Party\Newport\Newport_USB_Driver\Include;$(ProjectDir)3rd_Party\PyBind;$(ProjectDir)3rd_Party\Python\Python38\include;$(IncludePath)</IncludePath>
+    <LibraryPath>$(ProjectDir)3rd_Party\Newport\Newport_USB_Driver\Lib;$(ProjectDir)3rd_Party\Python\Python38\libs;$(LibraryPath)</LibraryPath>
+  </PropertyGroup>
+  <ItemDefinitionGroup>
+    <Link>
+      <AdditionalDependencies>usbdll.lib;python38_d.lib;%(AdditionalDependencies)</AdditionalDependencies>
+    </Link>
+    <ClCompile>
+      <PreprocessorDefinitions>COMPILING_DLL;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+    </ClCompile>
+  </ItemDefinitionGroup>
+  <ItemGroup />
+</Project>
