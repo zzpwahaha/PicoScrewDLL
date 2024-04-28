@@ -4,13 +4,13 @@
 #include <vector>
 #include <map>
 
-//#if COMPILING_DLL
-//#define DLLEXPORT __declspec(dllexport)
-//#else
-//#define DLLEXPORT __declspec(dllimport)
-//#endif
+#if COMPILING_DLL
+#define DLLEXPORT __declspec(dllexport)
+#else
+#define DLLEXPORT __declspec(dllimport)
+#endif
 
-#define DLLEXPORT
+//#define DLLEXPORT
 
 // This class interfaces with UsbDll.dll and provides the basic
 // functionality for USB communication.
