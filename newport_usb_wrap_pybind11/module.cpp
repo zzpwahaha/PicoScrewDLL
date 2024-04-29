@@ -8,17 +8,23 @@ namespace py = pybind11;
 PYBIND11_MODULE(newport_usb_wrap_pybind11, m) {
 	py::class_<NewportUSB> usb(m, "NewportUSB");
 	usb.def(py::init<>())
+		.def_readonly_static("m_knMaxBufferLength", &NewportUSB::m_knMaxBufferLength)
+		.def("initSystem", &NewportUSB::initSystem, "void initSystem()")
+		.def("uninitSystem", &NewportUSB::uninitSystem, "void uninitSystem()")
 		.def("OpenDevices", static_cast<bool (NewportUSB::*)(int, bool)>(&NewportUSB::OpenDevices),
 			"bool OpenDevices (int nProductID, bool bUsingDeviceKey)")
 		.def("CloseDevices", &NewportUSB::CloseDevices, "void CloseDevices ()")
-		.def("GetDeviceTable", &NewportUSB::GetDeviceTable, "std::map <std::string, int> GetDeviceTable ();");
+		.def("GetDeviceTable", &NewportUSB::GetDeviceTable, "std::map <std::string, int> GetDeviceTable ()")
+		.def("Read", static_cast<int (NewportUSB::*)(std::string, char*, int, unsigned long*)>(&NewportUSB::Read),
+			"int Read (std::string strDeviceKey, char* lpBuffer, int nLength, unsigned long* lBytesRead)")
+		.def("Write", static_cast<int (NewportUSB::*)(std::string, std::string)>(&NewportUSB::Write), "int Write (std::string strDeviceKey, std::string strBuffer)")
+		;
 
 
 	py::class_<NewportUSB::DevInfo>(usb, "DevInfo")
 		.def(py::init<>())
 		.def_readwrite("nID", &NewportUSB::DevInfo::nID)
 		.def_readwrite("strDescription", &NewportUSB::DevInfo::strDescription);
-
 
 }
 

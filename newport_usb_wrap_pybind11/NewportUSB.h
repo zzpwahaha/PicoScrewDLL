@@ -19,6 +19,8 @@ public:
 		int nID;
 		std::string strDescription;
 	};
+	void initSystem();
+	void uninitSystem();
 
 	bool OpenDevices (int nProductID = 0);
 	bool OpenDevices (int nProductID, bool bUsingDeviceKey);
