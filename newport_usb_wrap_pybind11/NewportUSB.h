@@ -4,6 +4,7 @@
 #include <string>
 #include <vector>
 #include <map>
+#include <tuple>
 
 // This class interfaces with UsbDll.dll and provides the basic
 // functionality for USB communication.
@@ -25,6 +26,8 @@ public:
 	bool OpenDevices (int nProductID = 0);
 	bool OpenDevices (int nProductID, bool bUsingDeviceKey);
 	void CloseDevices ();
+	std::tuple<int, std::string> Read(std::string strDeviceKey);
+	int Read(std::string strDeviceKey, std::string& readBuff);
 	int Read (std::string strDeviceKey, char* lpBuffer, int nLength, unsigned long* lBytesRead);
 	int Read (int nDeviceID, char* lpBuffer, int nLength, unsigned long* lBytesRead);
 	int ReadBinary (std::string strDeviceKey, char* lpBuffer, int nLength, unsigned long* lBytesRead);

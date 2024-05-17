@@ -170,6 +170,23 @@ void NewportUSB::CloseDevices ()
 	}
 }
 
+std::tuple<int, std::string> NewportUSB::Read(std::string strDeviceKey)
+{
+	std::string readMsg;
+	int n = Read(strDeviceKey, readMsg);
+	return std::tuple<int, std::string>(n, readMsg);
+}
+
+int NewportUSB::Read(std::string strDeviceKey, std::string& readBuff)
+{
+	char szBuffer[NewportUSB::m_knMaxBufferLength];
+	unsigned long lBytesRead = 0;
+
+	int nStatus = Read(strDeviceKey, szBuffer, NewportUSB::m_knMaxBufferLength, &lBytesRead);
+	readBuff = std::string(szBuffer);
+	return nStatus;
+}
+
 ////////////////////////////////////////////////////////////////////////////////
 // This method reads the response data from the specified device.
 // Input:

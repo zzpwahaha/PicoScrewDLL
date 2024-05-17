@@ -15,8 +15,12 @@ PYBIND11_MODULE(newport_usb_wrap_pybind11, m) {
 			"bool OpenDevices (int nProductID, bool bUsingDeviceKey)")
 		.def("CloseDevices", &NewportUSB::CloseDevices, "void CloseDevices ()")
 		.def("GetDeviceTable", &NewportUSB::GetDeviceTable, "std::map <std::string, int> GetDeviceTable ()")
-		.def("Read", static_cast<int (NewportUSB::*)(std::string, char*, int, unsigned long*)>(&NewportUSB::Read),
-			"int Read (std::string strDeviceKey, char* lpBuffer, int nLength, unsigned long* lBytesRead)")
+		//.def("Read", static_cast<int (NewportUSB::*)(std::string, char*, int, unsigned long*)>(&NewportUSB::Read),
+		//	"int Read (std::string strDeviceKey, char* lpBuffer, int nLength, unsigned long* lBytesRead)")
+		//.def("Read", static_cast<int (NewportUSB::*)(std::string, std::string&)>(&NewportUSB::Read),
+		//	"int Read(std::string strDeviceKey, std::string& readBuff)")
+		.def("Read", static_cast<std::tuple<int,std::string> (NewportUSB::*)(std::string)>(&NewportUSB::Read),
+			"std::tuple<int, std::string> Read(std::string strDeviceKey)")
 		.def("Write", static_cast<int (NewportUSB::*)(std::string, std::string)>(&NewportUSB::Write), "int Write (std::string strDeviceKey, std::string strBuffer)")
 		;
 
