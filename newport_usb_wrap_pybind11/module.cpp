@@ -30,8 +30,6 @@ PYBIND11_MODULE(newport_usb_wrap_pybind11, m) {
 
 
 
-
-
 //struct Pet {
 //    enum Kind {
 //        Dog = 0,

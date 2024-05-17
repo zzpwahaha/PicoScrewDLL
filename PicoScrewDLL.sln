@@ -7,6 +7,8 @@ Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "newport_usb_wrap", "newport
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "newport_usb_wrap_pybind11", "newport_usb_wrap_pybind11\newport_usb_wrap_pybind11.vcxproj", "{A63EBDD3-0A5D-474D-BF9C-5B1500F64FCA}"
 EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "AccessingPythonLibrary", "AccessingPythonLibrary\AccessingPythonLibrary.vcxproj", "{63F4CDCF-431B-428B-A32A-10ADD267624B}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|x64 = Debug|x64
@@ -21,6 +23,10 @@ Global
 		{A63EBDD3-0A5D-474D-BF9C-5B1500F64FCA}.Debug|x64.Build.0 = Debug|x64
 		{A63EBDD3-0A5D-474D-BF9C-5B1500F64FCA}.Release|x64.ActiveCfg = Release|x64
 		{A63EBDD3-0A5D-474D-BF9C-5B1500F64FCA}.Release|x64.Build.0 = Release|x64
+		{63F4CDCF-431B-428B-A32A-10ADD267624B}.Debug|x64.ActiveCfg = Debug|x64
+		{63F4CDCF-431B-428B-A32A-10ADD267624B}.Debug|x64.Build.0 = Debug|x64
+		{63F4CDCF-431B-428B-A32A-10ADD267624B}.Release|x64.ActiveCfg = Release|x64
+		{63F4CDCF-431B-428B-A32A-10ADD267624B}.Release|x64.Build.0 = Release|x64
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
